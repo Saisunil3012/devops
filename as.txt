@@ -1,0 +1,130 @@
+#! /bin/bash
+echo "enter your name"
+read name
+echo "enter your age"
+read age
+if [$age -ge 21];
+then
+echo "You are eligible for vote" ;
+else
+echo "you are not eligible for vote" ;
+fi
+   
+echo "enter your name"
+read name
+echo "enter your age"
+read age 
+echo "enter your gender"
+read gender
+echo "Hello $name, your age is $age and you are $gender" ;
+
+
+https://sunilmybucket.s3.ap-south-1.amazonaws.com/sb-rest-api.jar
+
+
+
+#! /bin/bash
+sudo su
+yum install httpd -y
+echo "<html><h1>This is dabit card prcessing first Server </h1></html>" > /var/www/html/index.html
+echo "<html><h1>Please wait, we are processing your debit card transaction from debit Server first </h1></html>" > /var/www/html/debit.html
+service httpd start
+
+#! /bin/bash
+sudo su
+yum install httpd -y
+echo "<html><h1>This is dabit card prcessing second Server </h1></html>" > /var/www/html/index.html
+echo "<html><h1>Please wait, we are processing your debit card transaction from debit Server second </h1></html>" > /var/www/html/debit.html
+service httpd start
+
+#! /bin/bash
+sudo su
+yum install httpd -y
+echo "<html><h1>This is credit card prcessing first Server </h1></html>" > /var/www/html/index.html
+echo "<html><h1>Please wait, we are processing your credit card transaction from credit Server first </h1></html>" > /var/www/html/credit.html
+service httpd start
+
+#! /bin/bash
+sudo su
+yum install httpd -y
+echo "<html><h1>This is credit card prcessing second Server </h1></html>" > /var/www/html/index.html
+echo "<html><h1>Please wait, we are processing your credit card transaction from credit Server second </h1></html>" > /var/www/html/credit.html
+service httpd start
+
+path */debit*            forward to debit-tg
+path */credit*           forward to credit-tg
+
+echo "<html><h1>my first credit server </h1></html>" > /var/www/html/index.html
+
+1) Create EC2 Instance 1 with below userdata
+
+#! /bin/bash
+sudo su
+yum install httpd -y
+cd /var/www/html
+echo "<html><h1>Medical Insurance Server - 1</h1></html>" > index.html
+service httpd start
+
+
+2) Create EC2 Instance 2 with below userdata
+
+#! /bin/bash
+sudo su
+yum install httpd -y
+cd /var/www/html
+echo "<html><h1>Medical Insurance Server - 2</h1></html>" > index.html
+service httpd start
+
+
+3) Create Medical-Target Group with above 2 EC2 instances (GroupName: Medical-Group)
+
+
+
+4) Create EC2 Instance 3 with below userdata
+
+#! /bin/bash
+sudo su
+yum install httpd -y
+cd /var/www/html
+echo "<html><h1>Life Insurance Server - 1</h1></html>" > index.html
+service httpd start
+
+
+5) Create EC2 Instance 4 with below userdata
+
+#! /bin/bash
+sudo su
+yum install httpd -y
+cd /var/www/html
+echo "<html><h1>Life Insurance Server - 2</h1></html>" > index.html
+service httpd start
+
+6) Create Life-Target Group with above 2 EC2 instances (GroupName: Life-Group)
+
+
+7) Goto Target Groups and Register Targets
+
+#! /bin/bash
+sudo su
+sudo yum install httpd -y
+echo "<html><h1>my server-1</h1></html>" > /var/www/html/index.html
+sudo systemctl start httpd
+
+#! /bin/bash
+sudo su
+yum install httpd -y
+echo "<html><h1>my server-1</h1></html>" > /var/www/html/index.html
+systemctl start httpd
+
+#! /bin/bash
+sudo su
+sudo apt update
+sudo apt install apache2 
+echo "<html><h1>my server-1</h1></html>" > /var/www/html/index.html
+sudo systemctl start apache2
+
+#! /bin/bash
+sudo su
+sudo apt update
+sudo apt install apache2 
+sudo systemctl start apache2
